@@ -1,0 +1,67 @@
+::ng-deep {
+    body {
+        background: url("../../../../assets/images/bg-login-dotz.png") no-repeat;
+        background-size: cover;
+        background-position: initial;
+        background-attachment: fixed;
+        
+        .centraliza {
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-dotz {
+            padding-bottom: 5%;
+        }
+
+        .p-card {
+            background: #fcc777;
+            box-shadow: 0 4px 5px rgb(0 0 0 / 30%), 0 1px 2px rgb(0 0 0 / 24%);
+            border-radius: 0 0 25px 25px;
+            opacity: .8;
+            padding-top: 10%;
+            .p-card-body {
+                background: none;
+                border-radius: 0 0 25px 25px;
+
+                .p-inputtext {
+                    background: white;
+                    border-radius: 0.3rem;
+                    width: 100%;
+                    line-height: 1.4em;
+                    padding: 0.638em;
+                    box-shadow: 1px 1px 1px #c6c6c6;
+                    border: 0 solid #a6a6a6;
+                    transition: border-color 0.2s;
+                    outline: 0;
+                    &:hover {
+                      box-shadow: 1px 1px 1px #c6c6c6;
+                    }
+                    &:focus {
+                      box-shadow: 1px 1px 1px #c6c6c6;
+                    }
+                    &::placeholder {
+                        color: #f8a51b;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: 800;
+                     }
+                }
+                
+                .p-button {
+                    background: #042453;
+                    border: 1px solid #042453;
+                    border-radius: 25px;
+                    padding: 10px 40px;
+                    color: #f8a51b;
+                    font-family: sans-serif;
+                    font-weight: 800;
+                    font-size: 14pt;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}

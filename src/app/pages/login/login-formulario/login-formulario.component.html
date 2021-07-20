@@ -1,1 +1,31 @@
-<p>login-formulario works!</p>
+<div class="p-grid">
+    <div class="p-col-12 p-sm-12 p-md-4 p-lg-4 p-xl-4 p-p-0 p-m-md-0"></div>
+    <div class="p-col-12 p-sm-12 p-md-4 p-lg-4 p-xl-4 p-p-0 p-m-md-0">
+        <form [formGroup]="formulario">
+            <p-card>
+                <div class="p-grid">
+                    <div class="centraliza logo-dotz">
+                        <img src="../../../../assets/images/logo_dotz_-min.png" alt="logomarca da Dotz">
+                    </div>
+                </div>
+                <div class="p-grid p-p-6">
+                    <div class="p-col-12 p-sm-12">
+                        <input class="p-col-12" type="username" placeholder="E-mail" aria-describedby="email-help" pInputText formControlName="usuario" />
+                    </div>
+                    <div class="p-col-12 p-sm-12">
+                        <input class="p-col-12" pInputText type="password" placeholder="Senha" aria-describedby="senha-help" formControlName="senha"/>
+                    </div>
+                    <div class="p-col-12 p-sm-12">
+                        <div class="p-col-6 p-p-0 p-m-md-0">
+                            <button pButton type="button" label="Login" (click)="autenticaUsuario()"></button>
+                        </div>
+                        <div class="p-col-6">
+
+                        </div>
+                    </div>
+                </div>
+            </p-card>
+        </form>
+    </div>
+    <div class="p-col-12 p-sm-12 p-md-4 p-lg-4 p-xl-4 p-p-0 p-m-md-0"></div>
+</div>

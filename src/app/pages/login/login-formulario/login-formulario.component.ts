@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-formulario',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-formulario.component.scss']
 })
 export class LoginFormularioComponent implements OnInit {
+  
+  public formulario: FormGroup;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute, 
+  ) { }
 
   ngOnInit(): void {
+    this.criaFormulario();
   }
+  
+  private criaFormulario(): void {
+    this.formulario = this.fb.group({
+      usuario: [null, Validators.required],
+      senha: [null, Validators.required]
+    })
+  }
+
+  public autenticaUsuario() {}
 
 }
