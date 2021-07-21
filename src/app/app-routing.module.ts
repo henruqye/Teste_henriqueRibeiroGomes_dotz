@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'usuario',
     children: [
       {
-        path: 'formulario',
+        path: 'cadastro',
         loadChildren: () =>
           import(
             './pages/usuario/usuario-cadastro/usuario-cadastro.module'

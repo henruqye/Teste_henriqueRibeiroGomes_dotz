@@ -7,7 +7,7 @@ const routes: Routes = [
 	{
 		path: '',
 		data: {
-      rotaPrincipal: Rotas.USUARIO.cadastro
+      		rotaPrincipal: Rotas.USUARIO.cadastro
 
 		},
 		component: UsuarioCadastroComponent

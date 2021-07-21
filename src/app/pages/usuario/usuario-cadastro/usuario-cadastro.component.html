@@ -1,1 +1,95 @@
-<p>usuario-cadastro works!</p>
+<div class="p-grid">
+    <div class="p-col-12 p-sm-12 p-md-1"></div>
+    <div class="p-col-12 p-sm-12 p-md-10">
+        <div class="box">
+            <form [formGroup]="formulario" (ngSubmit)="false">
+                <div class="p-grid p-mb-6">
+                    <h1><i class="pi pi-user"></i> Cadastro de usuário</h1>
+                </div>
+
+                <p-fieldset legend="Informações pessoais">
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-6">
+                            <input type="text" placeholder="Nome" pInputText formControlName="nome" />
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-6">
+                            <input type="text" placeholder="Sobrenome" pInputText formControlName="sobrenome" />
+                        </div>
+                    </div>
+        
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <p-inputMask formControlName="cpf" placeholder="CPF" mask="999.999.999-99"></p-inputMask>
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <p-calendar class="p-fluid" formControlName="dataNacimento" placeholder="Data de nascimento" yearRange="1930:2050"
+                            [monthNavigator]="true" [yearNavigator]="true" [showIcon]="true" dateFormat="dd/mm/yy" [locale]="pt"
+                            (window:resize)="verificarTipoDispositivo()" [touchUI]="ehDispositivoMovel"></p-calendar>
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <p-inputMask formControlName="Contato" placeholder="Telefone para contato " mask="(99) 99999-9999"></p-inputMask>
+                        </div>
+                    </div>                    
+                </p-fieldset>
+
+                <p-fieldset legend="Endereço de entrega">
+                    
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="text" placeholder="País" pInputText formControlName="pais" value="Brasil" disabled/>
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <p-dropdown id="idTipo" [filter]="true" [options]="listaEstadosBrasileiro" formControlName="estado" optionLabel="sigla"
+                                placeholder="Estado"></p-dropdown>
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="text" placeholder="Cidade" pInputText formControlName="cidade" />
+                        </div>
+                    </div>
+
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-2">
+                            <p-inputMask formControlName="cep" placeholder="CEP" mask="99999-999"></p-inputMask>
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-3">
+                            <input type="text" placeholder="Bairro" pInputText formControlName="bairro" />
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-5">
+                            <input type="text" placeholder="Logradouro" pInputText formControlName="logradouro" />
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-2">
+                            <input type="text" placeholder="Nº residência" pInputText formControlName="numeroResidencia" />
+                        </div>
+                    </div>
+
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-2">
+                            <input type="text" placeholder="Complemento" pInputText formControlName="complemento" />
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="text" placeholder="Ponto de referência" pInputText formControlName="complemento" />
+                        </div>
+                    </div>
+
+                </p-fieldset>
+
+                <p-fieldset legend="Informações de login">
+                    <div class="p-grid p-mb-3">
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="text" placeholder="E-mail" pInputText formControlName="email" />
+                        </div>
+                    
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="password" pPassword placeholder="Senha" formControlName="senha" />
+                        </div>
+                        <div class="p-col-12 p-sm-12 p-md-4">
+                            <input type="text" placeholder="Confirme a senha" pInputText formControlName="confirmacaoSenha" />
+                        </div>
+                    </div>
+                </p-fieldset>
+
+            </form>
+        </div>
+    </div>
+    <div class="p-col-12 p-sm-12 p-md-1"></div>
+</div>

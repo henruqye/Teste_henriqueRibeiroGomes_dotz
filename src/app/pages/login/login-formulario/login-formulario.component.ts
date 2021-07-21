@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Rotas } from '../../../core/enums/rotas.enum';
 
 @Component({
   selector: 'app-login-formulario',
@@ -28,6 +29,11 @@ export class LoginFormularioComponent implements OnInit {
     })
   }
 
-  public autenticaUsuario() {}
+  public autenticarUsuario() {}
+
+  public acessarCadastroUsuario(): void {
+    this.router.navigate([Rotas.USUARIO.cadastro])
+    console.log("bliblibli");
+  }
 
 }
