@@ -84,7 +84,6 @@ export class UsuarioCadastroComponent implements OnInit {
 
   private salvarPessoa(): void {
     
-    let pessoacadastrada = new Pessoa();
     let pessoa = new Pessoa();
     pessoa.nome = this.formulario.get("nome").value;
     pessoa.sobrenome = this.formulario.get("sobrenome").value;
@@ -95,7 +94,6 @@ export class UsuarioCadastroComponent implements OnInit {
     
     this.service.salvarPessoa(pessoa).subscribe((pessoa) => {
       this.salvarInformacoesLogon(pessoa);
-      pessoacadastrada = pessoa
     })
   }
   

@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng-lts/password';
 import { InputTextModule } from 'primeng-lts/inputtext';
 import { ButtonModule } from 'primeng-lts/button';
-
+import { ToastModule } from 'primeng-lts/toast';
 @NgModule({
   declarations: [LoginFormularioComponent],
   imports: [
@@ -17,7 +17,8 @@ import { ButtonModule } from 'primeng-lts/button';
     InputTextModule,
     PasswordModule,
     ButtonModule,
-
+    ToastModule,
+    
     LoginFormularioRoutingModule
   ]
 })

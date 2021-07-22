@@ -10,7 +10,7 @@
                 </div>
                 <div class="p-grid p-p-6">
                     <div class="p-col-12 p-sm-12">
-                        <input class="p-col-12" type="username" placeholder="E-mail" aria-describedby="email-help" pInputText formControlName="usuario" />
+                        <input class="p-col-12" type="username" placeholder="E-mail" aria-describedby="email-help" pInputText formControlName="email" />
                     </div>
                     <div class="p-col-12 p-sm-12">
                         <input class="p-col-12" pInputText type="password" placeholder="Senha" aria-describedby="senha-help" formControlName="senha"/>
@@ -18,10 +18,10 @@
                     <div class="p-col-12 p-sm-12">
                         <div class="p-grid p-p-2">
                             <div class="p-col-6 p-p-0 p-m-md-0">
-                                <button pButton type="button" class="primario" label="Login" (click)="autenticarUsuario()"></button>
+                                <button class="butaoRedirecionarCadastro" (click)="cadastrarUsuario()">Cadastre-se na Dotz!</button>
                             </div>
                             <div class="p-col-6 p-p-0 p-m-md-0">
-                                <button class="butaoRedirecionarCadastro" (click)="cadastrarUsuario()">Cadastre-se na Dotz!</button>
+                                <button pButton type="button" class="primario" label="Login" (click)="autenticarUsuario()" style="float: right; margin-right: 0;"></button>
                             </div>
                         </div>
                     </div>
@@ -31,3 +31,5 @@
     </div>
     <div class="p-col-12 p-sm-12 p-md-4"></div>
 </div>
+
+<p-toast></p-toast>
