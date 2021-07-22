@@ -11,6 +11,7 @@ import { FieldsetModule } from 'primeng-lts/fieldset';
 import { InputMaskModule } from 'primeng-lts/inputmask';
 import { CalendarModule } from 'primeng-lts/calendar';
 import { DropdownModule } from 'primeng-lts/dropdown';
+import { ToastModule } from 'primeng-lts/toast';
 
 @NgModule({
   declarations: [UsuarioCadastroComponent],
@@ -25,6 +26,7 @@ import { DropdownModule } from 'primeng-lts/dropdown';
     InputMaskModule,
     CalendarModule,
     DropdownModule,
+    ToastModule,
     
     UsuarioCadastroRoutingModule
   ]

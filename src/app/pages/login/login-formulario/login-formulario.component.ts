@@ -15,7 +15,7 @@ export class LoginFormularioComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private route: ActivatedRoute, 
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -31,9 +31,8 @@ export class LoginFormularioComponent implements OnInit {
 
   public autenticarUsuario() {}
 
-  public acessarCadastroUsuario(): void {
+  public cadastrarUsuario(): void {
     this.router.navigate([Rotas.USUARIO.cadastro])
-    console.log("bliblibli");
   }
 
 }

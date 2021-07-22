@@ -19,7 +19,7 @@
         
                     <div class="p-grid p-mb-3">
                         <div class="p-col-12 p-sm-12 p-md-4">
-                            <p-inputMask formControlName="cpf" placeholder="CPF" mask="999.999.999-99"></p-inputMask>
+                            <p-inputMask formControlName="cpf" placeholder="CPF" mask="999.999.999-99" (onBlur)="ehCpfValido();"></p-inputMask>
                         </div>
                         <div class="p-col-12 p-sm-12 p-md-4">
                             <p-calendar class="p-fluid" formControlName="dataNacimento" placeholder="Data de nascimento" yearRange="1930:2050"
@@ -27,7 +27,7 @@
                             (window:resize)="verificarTipoDispositivo()" [touchUI]="ehDispositivoMovel"></p-calendar>
                         </div>
                         <div class="p-col-12 p-sm-12 p-md-4">
-                            <p-inputMask formControlName="Contato" placeholder="Telefone para contato " mask="(99) 99999-9999"></p-inputMask>
+                            <p-inputMask formControlName="contato" placeholder="Telefone para contato " mask="(99) 99999-9999"></p-inputMask>
                         </div>
                     </div>                    
                 </p-fieldset>
@@ -78,18 +78,30 @@
                         <div class="p-col-12 p-sm-12 p-md-4">
                             <input type="text" placeholder="E-mail" pInputText formControlName="email" />
                         </div>
-                    
+                    </div>
+                    <div class="p-grid p-mb-3">
                         <div class="p-col-12 p-sm-12 p-md-4">
                             <input type="password" pPassword placeholder="Senha" formControlName="senha" />
                         </div>
+                    </div>
+                    <div class="p-grid p-mb-3">
                         <div class="p-col-12 p-sm-12 p-md-4">
-                            <input type="text" placeholder="Confirme a senha" pInputText formControlName="confirmacaoSenha" />
+                            <input type="password" placeholder="Confirme a senha" pInputText formControlName="confirmacaoSenha"/>
                         </div>
                     </div>
                 </p-fieldset>
 
+                <div class="p-grid p-justify-end p-mt-3">
+                    <button pButton type="button" class="primario" id="btnCadastrar" icon="pi pi-save" (click)="salvar()"
+                        label="Salvar" [disabled]="this.formulario.invalid"></button>
+                    <button pButton type="button" class="secundario" id="btnCancelar" icon="pi pi-times" label="Cancelar" 
+                        (click)="cancelar()"></button>
+                </div>
+    
             </form>
         </div>
     </div>
     <div class="p-col-12 p-sm-12 p-md-1"></div>
 </div>
+
+<p-toast></p-toast>
