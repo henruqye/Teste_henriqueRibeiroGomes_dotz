@@ -1,0 +1,33 @@
+::ng-deep {
+    body {
+        background: url("../../../../assets/images/bg-login-dotz.png") no-repeat;
+        background-size: cover;
+        background-position: initial;
+        background-attachment: fixed;
+
+        .logo-dotz {
+            padding-bottom: 10%;
+            padding-top: 10%;
+        }
+
+        .p-card {
+            border-radius: 25px;
+            margin-top: 20%;
+            .p-card-body {
+                border-radius: 0 0 25px 25px;
+
+                .butaoRedirecionarCadastro {
+                    background: none;
+                    border: none;
+                    font-size: 13pt;
+                    font-family: sans-serif;
+                    font-weight: 800;
+                    color: #042453;
+                    float: left;
+                    padding-top: 4%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
