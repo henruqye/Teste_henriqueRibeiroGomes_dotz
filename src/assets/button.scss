@@ -1,0 +1,44 @@
+.primario {
+    background: #042453;
+    border: 1px solid #042453;
+    border-radius: 25px;
+    padding: 10px 40px;
+    color: #f8a51b;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 14pt;
+    margin-right: 1rem;;
+    &:focus {
+        box-shadow: none;
+        background: #042453;
+        border: 1px solid #042453;
+    }
+    &:enabled {
+        &:hover {
+            background: #031b40;
+            color: #f8a51b;
+            border-color: #031b40;
+        }
+    }
+}
+
+.secundario {
+    background: #f8a51b;
+    border: 1px solid #f8a51b;
+    border-radius: 25px;
+    padding: 10px 40px;
+    color: #042453;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: 14pt;
+    &:focus {
+        box-shadow: none;
+    }
+    &:enabled {
+        &:hover {
+            background: #da8b08;
+            color: #042453;
+            border-color: #da8b08;
+        }
+    }
+}

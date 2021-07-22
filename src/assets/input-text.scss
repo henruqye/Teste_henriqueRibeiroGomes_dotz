@@ -1,0 +1,31 @@
+body {
+    .p-inputtext {
+        background: white;
+        border-radius: 0.3rem;
+        width: 100%;
+        line-height: 1.4em;
+        padding: 0.638em;
+        box-shadow: 1px 1px 1px #c6c6c6;
+        border: 0 solid #a6a6a6;
+        transition: border-color 0.2s;
+        outline: 0;
+        &:hover {
+          box-shadow: 1px 1px 1px #c6c6c6;
+        }
+        &:focus {
+          box-shadow: 1px 1px 1px #c6c6c6;
+          border: none;
+        }
+        &:enabled {
+            &:focus {
+                box-shadow: 1px 1px 1px #c6c6c6;
+                border: none;
+            }
+        }
+        &::placeholder {
+            color: #f8a51b;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+         }
+    }
+}
