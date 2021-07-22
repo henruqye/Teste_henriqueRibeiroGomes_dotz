@@ -16,9 +16,7 @@ export class PaginaInicialService {
   ) { }
 
   public obtemInformacoesUsuario(id: number): Observable<Pessoa> {
-    let params = new HttpParams()
-      .append('id',id.toString());
-    return this.http.get<Pessoa>(`${this.url}/Pessoa`, { params })
+    return this.http.get<Pessoa>(`${this.url}/Pessoa/${id}`)
   }
 
 }

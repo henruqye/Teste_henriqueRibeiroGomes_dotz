@@ -47,13 +47,11 @@ export class LoginFormularioComponent implements OnInit {
       if (this.ehSenhaValida(informacoesLogon)) {
 
         this.router.navigate([Rotas.PAGINAINICIAL.looby], {
-          queryParams: { id: informacoesLogon.pessoa },
+          queryParams: { id: informacoesLogon[0].pessoa },
           relativeTo: this.route.root
         })
-      } else {
-        
+      } else
         this.messageService.add({severity:'error', summary: 'Erro', detail: 'Senha inválida!'});
-      }
     });
   }
   

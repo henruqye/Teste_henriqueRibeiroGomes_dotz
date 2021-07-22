@@ -9,13 +9,12 @@ const routes: Routes = [
 	{
 		path: '',
 		data: {
-      rotaPrincipal: Rotas.PAGINAINICIAL.looby
-
+      		rotaPrincipal: Rotas.PAGINAINICIAL.looby
 		},
 		component: PaginaInicialComponent,
-    resolve: {
-      paginaInciialResolver: PaginaInicialResolverService
-    }
+	    resolve: {
+	      dadosLogon: PaginaInicialResolverService
+	    }
 	}
 ];
 
