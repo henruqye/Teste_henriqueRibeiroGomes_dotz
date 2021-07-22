@@ -77,42 +77,41 @@ export class UsuarioCadastroComponent implements OnInit {
 
       if (!this.ehSenhaValida())
         return;
-        
-      let pessoa = this.salvarPessoa();
-      this.salvarInformacoesLogon(pessoa.id);
+
+      this.salvarPessoa();
     }
   }
-  
-  private salvarInformacoesLogon(idPessoa: number) {
 
-    let informacoesLogon = new InformacoesLogon();
-    informacoesLogon.email = this.formulario.get("email").value;
-    informacoesLogon.senha = this.formulario.get("senha").value;
-    informacoesLogon.pessoa = idPessoa;
-
-    this.service.salvarInformacoesLogon(informacoesLogon).subscribe((informacoesLogon) => {
-      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Cadastro realizado com sucesso'});
-    })
-  }
-
-  private salvarPessoa(): Pessoa {
+  private salvarPessoa(): void {
     
     let pessoacadastrada = new Pessoa();
     let pessoa = new Pessoa();
     pessoa.nome = this.formulario.get("nome").value;
     pessoa.sobrenome = this.formulario.get("sobrenome").value;
-    pessoa.cpf = this.removendoPontuacao(this.formulario.get("sobrenome").value);
+    pessoa.cpf = this.removendoPontuacao(this.formulario.get("cpf").value);
     pessoa.dataNascimento = this.formulario.get("dataNacimento").value;
     pessoa.contato = this.montaOnjetoContato();
     pessoa.informacoesDeEntrega = this.montaObjetoEndereco();
     
     this.service.salvarPessoa(pessoa).subscribe((pessoa) => {
+      this.salvarInformacoesLogon(pessoa);
       pessoacadastrada = pessoa
     })
-
-    return pessoacadastrada;
   }
   
+  private salvarInformacoesLogon(pessoa: Pessoa) {
+
+    let informacoesLogon = new InformacoesLogon();
+    informacoesLogon.email = this.formulario.get("email").value;
+    informacoesLogon.senha = this.formulario.get("senha").value;
+    informacoesLogon.pessoa = pessoa.id;
+
+    this.service.salvarInformacoesLogon(informacoesLogon).subscribe((informacoesLogon) => {
+      this.messageService.add({severity:'success', summary: 'Sucesso', detail: 'Cadastro realizado com sucesso'});
+      
+    })
+  }
+
   private montaOnjetoContato(): Contato {
     
     var contato = new Contato();
