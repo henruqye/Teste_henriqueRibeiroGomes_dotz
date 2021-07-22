@@ -5,6 +5,7 @@ import { MessageService } from 'primeng-lts/api';
 import { Rotas } from '../../../core/enums/rotas.enum';
 import { InformacoesLogon } from '../../../core/entities/informacoes-logon';
 import { LoginFormularioService } from './login-formulario.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-login-formulario',
@@ -15,6 +16,7 @@ import { LoginFormularioService } from './login-formulario.service';
 export class LoginFormularioComponent implements OnInit {
   
   public formulario: FormGroup;
+  public informacoesLogon: Subject<InformacoesLogon> = new Subject<InformacoesLogon>();
 
   constructor(
     private fb: FormBuilder,
@@ -40,31 +42,39 @@ export class LoginFormularioComponent implements OnInit {
     if (!this.formulario.valid)
       return;
 
-    let informacoesLogon = new InformacoesLogon();
-    informacoesLogon = this.obtemInformacoesLogon();
-    if (this.ehSenhaValida(informacoesLogon)) {
-      this.messageService.add({severity:'sucss', summary: 'Sucesso', detail: 'deu certo'});
-    } else {
-      this.messageService.add({severity:'error', summary: 'Erro', detail: 'Senha inválida!'});
-    }
+    this.obtemInformacoesLogon();    
+    this.informacoesLogon.subscribe((informacoesLogon) => {
+      if (this.ehSenhaValida(informacoesLogon)) {
+
+        this.router.navigate([Rotas.PAGINAINICIAL.looby], {
+          queryParams: { id: informacoesLogon.pessoa },
+          relativeTo: this.route.root
+        })
+      } else {
+        
+        this.messageService.add({severity:'error', summary: 'Erro', detail: 'Senha inválida!'});
+      }
+    });
   }
   
   private obtemInformacoesLogon(): InformacoesLogon {
     
-    let informacoesLogon = new InformacoesLogon();
+    let _informacoesLogon = new InformacoesLogon();
+
     this.service.obtemInformacoesLogon(this.formulario.get('email').value).then((informacoesLogonResult) => {
-      informacoesLogon = informacoesLogonResult;
-      if (!informacoesLogon) {
+      if (!_informacoesLogon) {
         this.messageService.add({severity:'error', summary: 'Erro', detail: 'E-mail não encontrado'});
         return;
       }
+      _informacoesLogon = informacoesLogonResult
+      this.informacoesLogon.next(_informacoesLogon);
     })
-
-    return informacoesLogon;
+    
+    return _informacoesLogon;
   }
   
   private ehSenhaValida(informacoesLogon: InformacoesLogon): boolean {
-    if (this.formulario.get('senha').value === informacoesLogon.senha)
+    if (this.formulario.get('senha').value == informacoesLogon[0].senha)
       return true;
     else  
       false;

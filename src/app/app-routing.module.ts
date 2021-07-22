@@ -29,6 +29,18 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'pagina-inicial',
+    children: [
+      {
+        path: '',
+        loadChildren: () => 
+          import(
+            './pages/pagina-inicial/pagina-inicial.module'
+          ).then((m) => m.PaginaInicialModule)
+      }
+    ]
+  },
+  {
 		path: '**',
 		redirectTo: Rotas.LOGIN.formulario,
 		pathMatch: 'full'

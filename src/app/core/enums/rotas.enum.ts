@@ -5,4 +5,7 @@ export class Rotas {
     static LOGIN = {
         formulario: 'login'
     }
+    static PAGINAINICIAL = {
+        looby: 'pagina-inicial'
+    }
 }
