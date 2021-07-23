@@ -8,7 +8,7 @@ import { InformacoesLogon } from '../../../core/entities/informacoes-logon';
   providedIn: 'root'
 })
 export class LoginFormularioService {
-  
+
   private url = environment.API_URL_CADASTRO_USUARIO;
 
   constructor(
@@ -16,8 +16,8 @@ export class LoginFormularioService {
   ) { }
 
   public async  obtemInformacoesLogon(email: string): Promise<InformacoesLogon> {
-    let params = new HttpParams()
-      .append('email',email.toString());
+    const params = new HttpParams()
+      .append('email', email.toString());
 
     return await this.http.get<InformacoesLogon>(`${this.url}/InformacoesLogon`, { params }).toPromise();
   }

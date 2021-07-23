@@ -39,8 +39,9 @@ export class LoginFormularioComponent implements OnInit {
 
   public autenticarUsuario(): void {
 
-    if (!this.formulario.valid)
+    if (!this.formulario.valid) {
       return;
+    }
 
     this.obtemInformacoesLogon();
     this.informacoesLogon.subscribe((informacoesLogon) => {
@@ -50,8 +51,9 @@ export class LoginFormularioComponent implements OnInit {
           queryParams: { id: informacoesLogon[0].pessoa },
           relativeTo: this.route.root
         });
-      } else
-        this.messageService.add({severity:'error', summary: 'Erro', detail: 'Senha inválida!'});
+      } else {
+        this.messageService.add({severity: 'error', summary: 'Erro', detail: 'Senha inválida!'});
+      }
     });
   }
 
@@ -72,10 +74,12 @@ export class LoginFormularioComponent implements OnInit {
   }
 
   private ehSenhaValida(informacoesLogon: InformacoesLogon): boolean {
-    if (this.formulario.get('senha').value === informacoesLogon[0].senha)
+    if (this.formulario.get('senha').value === informacoesLogon[0].senha) {
       return true;
-    else
+    }
+    else {
     return false;
+    }
   }
 
   public cadastrarUsuario(): void {

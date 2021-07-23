@@ -6,21 +6,21 @@ import { PaginaInicialComponent } from './pagina-inicial.component';
 import { PaginaInicialResolverService } from './pagina-inicial.resolver.service';
 
 const routes: Routes = [
-	{
-		path: '',
-		data: {
-      		rotaPrincipal: Rotas.PAGINAINICIAL.looby
-		},
-		component: PaginaInicialComponent,
-	    resolve: {
-	      dadosLogon: PaginaInicialResolverService
-	    }
-	}
+  {
+    path: '',
+    data: {
+          rotaPrincipal: Rotas.PAGINAINICIAL.looby
+    },
+    component: PaginaInicialComponent,
+      resolve: {
+        dadosLogon: PaginaInicialResolverService
+      }
+  }
 ];
 
 @NgModule({
-	imports: [RouterModule.forChild(routes)],
-	exports: [RouterModule],
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
   providers: [PaginaInicialResolverService]
 })
 export class PaginaInicialRoutingModule { }

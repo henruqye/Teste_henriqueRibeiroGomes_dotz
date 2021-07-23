@@ -5,7 +5,7 @@ export class EnumEstados {
     static AL = new EnumEstados(2, 'AL', 'Alagoas');
     static AP = new EnumEstados(3, 'AP', 'Amapá');
     static AM = new EnumEstados(4, 'AM', 'Amazonas');
-    static BA = new EnumEstados(5, 'BA', 'Bahia',);
+    static BA = new EnumEstados(5, 'BA', 'Bahia', );
     static CE = new EnumEstados(6, 'CE', 'Ceará');
     static DF = new EnumEstados(7, 'DF', 'Distrito Federal');
     static ES = new EnumEstados(8, 'ES', 'Espírito Santo');
@@ -26,10 +26,10 @@ export class EnumEstados {
     static RR = new EnumEstados(23, 'RR', 'Roraima');
     static SC = new EnumEstados(24, 'SC', 'Santa Catarina');
     static SP = new EnumEstados(25, 'SP', 'São Paulo');
-    static SE = new EnumEstados(26, 'SE', 'Sergipe',);
+    static SE = new EnumEstados(26, 'SE', 'Sergipe', );
     static TO = new EnumEstados(27, 'TO', 'Tocantins');
 
-    constructor(public codigo: number, public sigla: string ,public descricao: string) {
+    constructor(public codigo: number, public sigla: string , public descricao: string) {
         listaEstados.push(this);
     }
 

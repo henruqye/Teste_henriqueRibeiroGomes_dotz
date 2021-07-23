@@ -1,0 +1,16 @@
+{
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.tslint": true
+	},
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"html.format.endWithNewline": true,
+	"html.format.maxPreserveNewLines": 1,
+	"html.format.preserveNewLines": true,
+	"html.format.wrapAttributes": "auto",
+	"html.format.wrapLineLength": 200,
+	"html.suggest.html5": true,
+	"explorer.compactFolders": false
+}

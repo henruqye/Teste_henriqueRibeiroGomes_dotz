@@ -45,7 +45,7 @@ export const CALENDARIO_PT_BR = {
     weekHeader: 'Wk',
   };
 
-  export const CALENDARIO_EN_US = {
+export const CALENDARIO_EN_US = {
     firstDayOfWeek: 0,
     dayNames: [
       'Sunday',
@@ -92,4 +92,3 @@ export const CALENDARIO_PT_BR = {
     weekHeader: 'Wk',
   };
 
-  
