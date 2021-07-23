@@ -2,9 +2,7 @@
 const listaTipoContato: Array<EnumTipoContato> = [];
 
 export class EnumTipoContato {
-    
-    static TELEFONE = new EnumTipoContato(1, "telefone");
-
+    static TELEFONE = new EnumTipoContato(1, 'telefone');
 
     constructor(public codigo: number, public descricao: string) {
         listaTipoContato.push(this);

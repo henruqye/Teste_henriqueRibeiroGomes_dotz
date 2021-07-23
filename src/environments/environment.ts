@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL_CADASTRO_USUARIO: "https://60f8f106ee56ef0017975b63.mockapi.io/api/cadastro/usuario/"
+  API_URL_CADASTRO_USUARIO: 'https://60f8f106ee56ef0017975b63.mockapi.io/api/cadastro/usuario/'
 };
 
 /*

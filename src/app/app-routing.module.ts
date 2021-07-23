@@ -33,7 +33,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => 
+        loadChildren: () =>
           import(
             './pages/pagina-inicial/pagina-inicial.module'
           ).then((m) => m.PaginaInicialModule)
@@ -41,11 +41,10 @@ const routes: Routes = [
     ]
   },
   {
-		path: '**',
-		redirectTo: Rotas.LOGIN.formulario,
-		pathMatch: 'full'
-	  }
-
+    path: '**',
+    redirectTo: Rotas.LOGIN.formulario,
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

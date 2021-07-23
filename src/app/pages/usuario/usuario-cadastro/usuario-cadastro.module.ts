@@ -27,7 +27,7 @@ import { ToastModule } from 'primeng-lts/toast';
     CalendarModule,
     DropdownModule,
     ToastModule,
-    
+
     UsuarioCadastroRoutingModule
   ]
 })

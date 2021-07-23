@@ -8,7 +8,7 @@ import { Pessoa } from '../../core/entities/pessoa';
   providedIn: 'root'
 })
 export class PaginaInicialService {
-  
+
   private url = environment.API_URL_CADASTRO_USUARIO;
 
   constructor(
@@ -16,7 +16,7 @@ export class PaginaInicialService {
   ) { }
 
   public obtemInformacoesUsuario(id: number): Observable<Pessoa> {
-    return this.http.get<Pessoa>(`${this.url}/Pessoa/${id}`)
+    return this.http.get<Pessoa>(`${this.url}/Pessoa/${id}`);
   }
 
 }

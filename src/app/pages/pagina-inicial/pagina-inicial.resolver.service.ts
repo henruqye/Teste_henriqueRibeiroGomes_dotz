@@ -8,16 +8,17 @@ import { PaginaInicialService } from './pagina-inicial.service';
   providedIn: 'root'
 })
 export class PaginaInicialResolverService implements Resolve<Observable<Pessoa>> {
-  
+
   private pessoa: Pessoa;
   constructor(private service: PaginaInicialService) {
     this.pessoa = new Pessoa();
   }
   resolve(route: ActivatedRouteSnapshot): Observable<Pessoa> {
     const id: number = +route.queryParamMap.get('id');
-    if(!id)
+    if (!id) {
       return;
-    
+    }
+
     return this.service.obtemInformacoesUsuario(id);
   }
 }
