@@ -5,10 +5,9 @@ import { LoginFormularioComponent } from './login-formulario.component';
 
 const routes: Routes = [
 	{
-		path: '',
-		data: {
-      rotaPrincipal: Rotas.LOGIN.formulario
-
+		path:'',
+		data:{
+      		rotaPrincipal: Rotas.LOGIN.formulario
 		},
 		component: LoginFormularioComponent
 	}

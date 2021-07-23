@@ -44,7 +44,7 @@ export const CALENDARIO_PT_BR = {
     dateFormat: 'mm/dd/yy',
     weekHeader: 'Wk',
   };
-  
+
   export const CALENDARIO_EN_US = {
     firstDayOfWeek: 0,
     dayNames: [
@@ -91,4 +91,5 @@ export const CALENDARIO_PT_BR = {
     dateFormat: 'mm/dd/yy',
     weekHeader: 'Wk',
   };
+
   

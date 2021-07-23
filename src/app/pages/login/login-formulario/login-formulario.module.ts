@@ -18,7 +18,6 @@ import { ToastModule } from 'primeng-lts/toast';
     PasswordModule,
     ButtonModule,
     ToastModule,
-    
     LoginFormularioRoutingModule
   ]
 })

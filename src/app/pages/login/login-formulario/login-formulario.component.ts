@@ -14,7 +14,7 @@ import { Subject } from 'rxjs';
   providers: [ MessageService ]
 })
 export class LoginFormularioComponent implements OnInit {
-  
+
   public formulario: FormGroup;
   public informacoesLogon: Subject<InformacoesLogon> = new Subject<InformacoesLogon>();
 
@@ -29,57 +29,57 @@ export class LoginFormularioComponent implements OnInit {
   ngOnInit(): void {
     this.criaFormulario();
   }
-  
+
   private criaFormulario(): void {
     this.formulario = this.fb.group({
       email: [null, Validators.required],
       senha: [null, Validators.required]
-    })
+    });
   }
 
-  public autenticarUsuario() {
+  public autenticarUsuario(): void {
 
     if (!this.formulario.valid)
       return;
 
-    this.obtemInformacoesLogon();    
+    this.obtemInformacoesLogon();
     this.informacoesLogon.subscribe((informacoesLogon) => {
       if (this.ehSenhaValida(informacoesLogon)) {
 
         this.router.navigate([Rotas.PAGINAINICIAL.looby], {
           queryParams: { id: informacoesLogon[0].pessoa },
           relativeTo: this.route.root
-        })
+        });
       } else
         this.messageService.add({severity:'error', summary: 'Erro', detail: 'Senha inválida!'});
     });
   }
-  
+
   private obtemInformacoesLogon(): InformacoesLogon {
-    
-    let _informacoesLogon = new InformacoesLogon();
+
+    let informacoesLogon = new InformacoesLogon();
 
     this.service.obtemInformacoesLogon(this.formulario.get('email').value).then((informacoesLogonResult) => {
-      if (!_informacoesLogon) {
-        this.messageService.add({severity:'error', summary: 'Erro', detail: 'E-mail não encontrado'});
+      if (!informacoesLogon) {
+        this.messageService.add({severity: 'error', summary: 'Erro', detail: 'E-mail não encontrado'});
         return;
       }
-      _informacoesLogon = informacoesLogonResult
-      this.informacoesLogon.next(_informacoesLogon);
-    })
-    
-    return _informacoesLogon;
+      informacoesLogon = informacoesLogonResult;
+      this.informacoesLogon.next(informacoesLogon);
+    });
+
+    return informacoesLogon;
   }
-  
+
   private ehSenhaValida(informacoesLogon: InformacoesLogon): boolean {
-    if (this.formulario.get('senha').value == informacoesLogon[0].senha)
+    if (this.formulario.get('senha').value === informacoesLogon[0].senha)
       return true;
-    else  
-      false;
+    else
+    return false;
   }
 
   public cadastrarUsuario(): void {
-    this.router.navigate([Rotas.USUARIO.cadastro])
+    this.router.navigate([Rotas.USUARIO.cadastro]);
   }
 
 }

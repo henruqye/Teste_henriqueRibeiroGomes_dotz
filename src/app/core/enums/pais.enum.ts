@@ -1,10 +1,7 @@
 
 const listaPaises: Array<EnumPais> = [];
-
 export class EnumPais {
-    
-    static BRASIL = new EnumPais(1, "Brasil");
-
+    static BRASIL = new EnumPais(1, 'Brasil');
 
     constructor(public codigo: number, public descricao: string) {
         listaPaises.push(this);
